@@ -14,3 +14,8 @@ six==1.16.0
 SQLAlchemy==1.4.36
 Werkzeug==2.1.2
 zipp==3.8.0
+pypdf==4.1.0
+google-cloud-storage==2.15.0
+spacy==3.7.4
+pyPDF2==3.0.1
+tqdm==4.66.2
