@@ -8,7 +8,7 @@ class DataPreProcessor:
     def __init__(self,spacy):
         self.spacy = spacy
         self.listOfResults = list()
-        self.nlp = spacy.load("content/output/model-last")
+        self.nlp = spacy.load("./tmp/8dc4743c1966b0e/content/output/model-best")
 
     
     def processContext(self,context) -> list:
@@ -48,7 +48,7 @@ class DataPreProcessor:
        count_file=1;
        for filename in os.listdir(source_folder):
          count_file+=1;
-         if(count_file ==11):
+         if(count_file ==21):
             break
          if filename.endswith('.pdf'):
            pdf_path = os.path.join(source_folder, filename)
