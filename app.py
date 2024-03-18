@@ -19,7 +19,7 @@ def predict():
     q1 = request.form.get("val")
     
     instance = DataPreProcessor.DataPreProcessor(spacy=spacy)
-    res = instance.loadModelAndProcessPdf(str(q1),'./RESUME/data')
+    res = instance.loadModelAndProcessPdfWithCount(str(q1),'./RESUME/data')
     sortScore(res)
     
     # print(res[0:int(request.form.get("count"))])
@@ -37,7 +37,7 @@ def predictCall():
     reqJson = request.get_json()
     
     instance = DataPreProcessor.DataPreProcessor(spacy=spacy)
-    res = instance.loadModelAndProcessPdf(reqJson['context'],reqJson['inputpath'])
+    res = instance.loadModelAndProcessPdfWithCount(reqJson['context'],reqJson['inputpath'])
     sortScore(res)
     print(res[0:int(reqJson['noOfMatches'])])
     return jsonify({"results":res[0:int(reqJson['noOfMatches'])]})
