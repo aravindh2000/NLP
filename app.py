@@ -14,7 +14,7 @@ def sortScore(data) :
 
 
 @app.route("/helloworld",methods=['GET'])
-def predict():
+def helloworld():
     return render_template('helloworld.html')
 
 
