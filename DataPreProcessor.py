@@ -9,7 +9,7 @@ class DataPreProcessor:
     def __init__(self,spacy):
         self.spacy = spacy
         self.listOfResults = list()
-        self.nlp = spacy.load(str("."+pathlib.Path().absolute()+'/RESUME/data'))
+        self.nlp = spacy.load(str("."+pathlib.Path().absolute()+'/content/output/model-best'))
 
     
     def processContext(self,context) -> list:
