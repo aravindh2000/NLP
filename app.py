@@ -13,13 +13,19 @@ def sortScore(data) :
                  
 
 
+@app.route("/helloworld",methods=['GET'])
+def predict():
+    return render_template('helloworld.html')
+
 
 @app.route("/predict",methods=['POST'])
 def predict():
     q1 = request.form.get("val")
     
     instance = DataPreProcessor.DataPreProcessor(spacy=spacy)
+    print("Inside Predict UI call")
     res = instance.loadModelAndProcessPdfWithCount(str(q1),'./tmp/8dc4743c1966b0e/RESUME/data')
+    print("Response Predict UI call", res)
     sortScore(res)
     
     # print(res[0:int(request.form.get("count"))])

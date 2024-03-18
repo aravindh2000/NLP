@@ -44,10 +44,15 @@ class DataPreProcessor:
        all_pdf_text = []
        singleString = ''
        contextTags = self.processContext(context=context)
+       
+       print("contextTags >>",contextTags)
+       print("OS information >>",os.listdir(source_folder))
+       print("OS root dir >>",os.listdir())
+       print("os.listdir(source_folder) >> ",len(os.listdir(source_folder)))  
        result =[]
-       count_file=1;
+       count_file=1
        for filename in os.listdir(source_folder):
-         count_file+=1;
+         count_file+=1
          if(count_file ==21):
             break
          if filename.endswith('.pdf'):
