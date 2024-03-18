@@ -1,4 +1,3 @@
-from numbers import Number
 from flask import Flask, request, jsonify, render_template
 import DataPreProcessor
 import spacy
