@@ -90,6 +90,7 @@ class DataPreProcessor:
        contextTags = self.processContext(context=context)
        result =[]
        for filename in os.listdir(source_folder):
+         print("Length >>",len(os.listdir(source_folder)))
          if filename.endswith('.pdf'):
            pdf_path = os.path.join(source_folder, filename)
 
