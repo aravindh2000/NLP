@@ -1,5 +1,6 @@
 import re
 from typing import Self
+import pathlib
 
 
 class DataPreProcessor:
@@ -8,7 +9,7 @@ class DataPreProcessor:
     def __init__(self,spacy):
         self.spacy = spacy
         self.listOfResults = list()
-        self.nlp = spacy.load("./tmp/8dc4743c1966b0e/content/output/model-best")
+        self.nlp = spacy.load(str("."+pathlib.Path().absolute()+'/RESUME/data'))
 
     
     def processContext(self,context) -> list:

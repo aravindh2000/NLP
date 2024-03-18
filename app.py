@@ -22,9 +22,14 @@ def helloworld():
 def predict():
     q1 = request.form.get("val")
     
+    import pathlib
+    absPath = pathlib.Path().absolute()
+    finalPath = str("."+absPath+'/RESUME/data')
+    print("finalPath >>",finalPath)
+
     instance = DataPreProcessor.DataPreProcessor(spacy=spacy)
     print("Inside Predict UI call")
-    res = instance.loadModelAndProcessPdfWithCount(str(q1),'./tmp/8dc4743c1966b0e/RESUME/data')
+    res = instance.loadModelAndProcessPdfWithCount(str(q1),finalPath)
     print("Response Predict UI call", res)
     sortScore(res)
     
@@ -41,10 +46,13 @@ def predict():
 @app.route("/predictCall",methods=['POST'])
 def predictCall():
     reqJson = request.get_json()
-    
+    import pathlib
+    absPath = pathlib.Path().absolute()
+    finalPath = str("."+absPath+'/RESUME/data')
+    print("finalPath >>",finalPath)
     instance = DataPreProcessor.DataPreProcessor(spacy=spacy)
     # res = instance.loadModelAndProcessPdfWithCount(reqJson['context'],reqJson['inputpath'])
-    res = instance.loadModelAndProcessPdfWithCount(reqJson['context'],'./tmp/8dc4743c1966b0e/RESUME/data')
+    res = instance.loadModelAndProcessPdfWithCount(reqJson['context'],finalPath)
 
 
     sortScore(res)
